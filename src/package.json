@@ -1,0 +1,23 @@
+{
+  "name": "expa-andoroid-java",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "docs:push": "vuepress build && git add -A && git commit -m \"new\" && git push origin master ",
+    "push": "git add -A && git commit -m \"new\" && git push origin master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikeweke/EXPA--Android-Java.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikeweke/EXPA--Android-Java/issues"
+  },
+  "homepage": "https://github.com/Nikeweke/EXPA--Android-Java#readme"
+}
