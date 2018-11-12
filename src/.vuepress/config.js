@@ -17,7 +17,10 @@ module.exports = {
         title: 'Android',
         collapsable: true,
         children: [
-          // '/frontend/cdn-links.md',
+          '/android/intro.md',
+          '/android/basic_elements.md',
+          '/android/database.md',
+          '/android/animations.md',
         ]
       },
       {
