@@ -19,8 +19,14 @@ module.exports = {
         children: [
           '/android/intro.md',
           '/android/basic_elements.md',
-          '/android/database.md',
+          '/android/data_savings.md',
           '/android/animations.md',
+          '/android/lifecycles-activity.md',
+          '/android/lifecycles-fragment.md',
+          '/android/gradle.md',
+          '/android/services.md',
+          '/android/otto.md',
+          '/android/realm.md',
         ]
       },
       {
@@ -31,6 +37,10 @@ module.exports = {
           '/java/env.md',
           '/java/datatypes.md',
           '/java/loops.md',
+          '/java/rx-java.md',
+          '/java/multithread'
+          '/java/concerency',
+          '/java/generics'
         ]
       },
     ]
