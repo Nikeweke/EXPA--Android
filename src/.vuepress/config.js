@@ -27,6 +27,7 @@ module.exports = {
           '/android/services.md',
           '/android/otto.md',
           '/android/realm.md',
+          '/android/retrofit.md',
         ]
       },
       {
