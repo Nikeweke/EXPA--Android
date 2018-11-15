@@ -18,6 +18,8 @@ module.exports = {
         collapsable: true,
         children: [
           '/android/intro.md',
+          '/android/studio.md',
+          '/android/gradle.md',
           '/android/basic_elements.md',
           '/android/data_savings.md',
           '/android/animations.md',
@@ -36,12 +38,12 @@ module.exports = {
         children: [
           '/java/intro.md',
           '/java/env.md',
+          '/java/netbeans.md',
           '/java/datatypes.md',
-          '/java/loops.md',
+          '/java/loop-array.md',
+          '/java/generics',
+          '/java/multithread-and-concurrency',
           '/java/rx-java.md',
-          '/java/multithread'
-          '/java/concerency',
-          '/java/generics'
         ]
       },
     ]
