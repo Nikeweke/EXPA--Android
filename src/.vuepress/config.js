@@ -11,24 +11,23 @@ module.exports = {
       { text: 'To repository', link: 'https://github.com/Nikeweke/EXPA--Android-Java'},
     ],
     sidebar: [
-      '/intro.md',
       '/links.md',
       {
         title: 'Android',
         collapsable: true,
         children: [
           '/android/intro.md',
-          // '/android/studio.md',
-          // '/android/gradle.md',
+          '/android/studio.md',
           '/android/basic_elements.md',
           '/android/data_savings.md',
+          '/android/activities.md',
+          '/android/fragments.md',
+          '/android/gradle.md',
           '/android/animations.md',
-          // '/android/lifecycles-activity.md',
-          // '/android/lifecycles-fragment.md',
-          // '/android/services.md',
-          // '/android/otto.md',
-          // '/android/realm.md',
-          // '/android/retrofit.md',
+          '/android/services.md',
+          '/android/otto.md',
+          '/android/realm.md',
+          '/android/retrofit.md',
         ]
       },
       {

@@ -1,8 +1,3 @@
-# Android 
+# Что такое Android?
 
-* Basic elements
-* Layouts
-* Resources
-* Animation
-* Data saving
-* Permissions for events of mobile
+Это платформа на основе которой можно создавать мобильные приложения. Программировать можно на `Java`, `Kotlin`, `C#`, `React Native` и т.д.
