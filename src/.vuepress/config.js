@@ -18,10 +18,10 @@ module.exports = {
         children: [
           '/android/intro.md',
           '/android/studio.md',
-          '/android/basic_elements.md',
+          // '/android/basic_elements.md',
           '/android/data_savings.md',
-          '/android/activities.md',
-          '/android/fragments.md',
+          // '/android/activities.md',
+          // '/android/fragments.md',
           '/android/gradle.md',
           '/android/animations.md',
           '/android/services.md',
