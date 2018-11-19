@@ -27,8 +27,8 @@ module.exports = {
           '/android/services.md',
           '/android/butterknife.md',
           '/android/otto.md',
-          '/android/realm.md',
           '/android/retrofit.md',
+          '/android/realm.md',
         ]
       },
       {
@@ -41,7 +41,8 @@ module.exports = {
           '/java/datatypes.md',
           '/java/loop-array.md',
           '/java/generics',
-          '/java/multithread-and-concurrency',
+          '/java/multithread',
+          '/java/concurrency',
           '/java/rx-java.md',
         ]
       },

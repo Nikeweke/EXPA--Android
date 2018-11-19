@@ -1,6 +1,11 @@
-# Multithread and concurrency
+# Multithread
 [Tutorial](https://www.tutorialspoint.com/java/java_multithreading.htm)
 
+[[toc]]
+
+---
+
+### Intro
 Java - многопоточный язык программирования, что означает, что мы можем разрабатывать многопоточную программу с использованием Java. Многопоточная программа содержит две или более части, которые могут выполняться одновременно, и каждая часть может обрабатывать другую задачу, одновременно обеспечивая оптимальное использование доступных ресурсов, особенно когда ваш компьютер имеет несколько процессоров.
 
 Ниже приведены этапы жизненного цикла:
@@ -20,40 +25,55 @@ Java - многопоточный язык программирования, ч�
 ### Приоритеты потоков (threads) 
 Каждый поток Java имеет приоритет, который помогает операционной системе определить порядок, в котором запланированы потоки.
 
-Приоритеты потоков Java находятся в диапазоне между **`MIN_PRIORITY` (константа 1)** и **`MAX_PRIORITY` (константа 10)**. По умолчанию каждому потоку присваивается приоритет **`NORM_PRIORITY` (постоянная 5)**.
+Приоритеты потоков Java находятся в диапазоне между **MIN_PRIORITY** (константа 1) и **MAX_PRIORITY** (константа 10). По умолчанию каждому потоку присваивается приоритет **NORM_PRIORITY** (постоянная 5).
 
 Потоки с более высоким приоритетом важны для программы и должны выделяться процессорным временем перед потоками с более низким приоритетом. Однако приоритеты потоков не могут гарантировать порядок, в котором потоки выполняются и зависят от платформы.
 
 ### Example #1
 ```java
 /*
-*  Create a Thread by Implementing a Runnable Interface
+*  Create a Thread by Extending a Thread Class
 */ 
+// Главный класс
 public class Tester {
-    
    public static void main(String args[]) {
-      RunnableDemo R1 = new RunnableDemo( "Thread-1");
-      R1.start();
-
-      RunnableDemo R2 = new RunnableDemo( "Thread-2");
-      R2.start();
+      ThreadDemo T1 = new ThreadDemo( "Thread-1");
+      T1.start();
+      
+      ThreadDemo T2 = new ThreadDemo( "Thread-2");
+      T2.start();
    }   
-    
 }
 
- class RunnableDemo implements Runnable {
+
+// Класс с потоками 
+class ThreadDemo extends Thread {
    private Thread t;
    private String threadName;
    
-   // __construct
-   RunnableDemo( String name) {
+   // __constructor
+   ThreadDemo (String name) {
       threadName = name;
-      System.out.println("Creating " +  threadName );
+      System.out.println("Creating " +  threadName);
    }
    
-   // 
+   
+   // При вызове start() создаем экземпляр класса Thread 
+   // и запускаем поток с сохранненым именем threadName
+   public void start () {
+      System.out.println("Starting " +  threadName);
+      
+      if (t == null) {
+         t = new Thread (this, threadName);
+         t.start ();
+      }
+   }
+      
+   // После запуска start() от экземпляра Thread, запускаеться run() метод который 
+   // и выполняеться в потоке
    public void run() {
-      System.out.println("Running " +  threadName );
+      System.out.println("Running " +  threadName);
+      
       try {
          for(int i = 4; i > 0; i--) {
             System.out.println("Thread: " + threadName + ", " + i);
@@ -63,10 +83,40 @@ public class Tester {
       } catch (InterruptedException e) {
          System.out.println("Thread " +  threadName + " interrupted.");
       }
+      
       System.out.println("Thread " +  threadName + " exiting.");
    }
+}
+```
+
+
+### Example #2
+```java
+/*
+*  Create a Thread by Implementing a Runnable Interface
+*/ 
+// Главный класс
+public class Tester {
+    public static void main(String args[]) {
+       RunnableDemo R1 = new RunnableDemo( "Thread-1");
+       R1.start();
+
+       RunnableDemo R2 = new RunnableDemo( "Thread-2");
+       R2.start();
+    }   
+}
+
+// Класс с потоками
+class RunnableDemo implements Runnable {
+   private Thread t;
+   private String threadName;
    
-   // 
+   // __construct
+   RunnableDemo( String name) {
+      threadName = name;
+      System.out.println("Creating " +  threadName );
+   }
+   
    public void start () {
       System.out.println("Starting " +  threadName );
       if (t == null) {
@@ -74,54 +124,23 @@ public class Tester {
          t.start ();
       }
    }
+   
+   public void run() {
+      System.out.println("Running " +  threadName );
+      
+      try {
+         for(int i = 4; i > 0; i--) {
+            System.out.println("Thread: " + threadName + ", " + i);
+            // Let the thread sleep for a while.
+            Thread.sleep(50);
+         }
+      } catch (InterruptedException e) {
+         System.out.println("Thread " +  threadName + " interrupted.");
+      }
+      
+      System.out.println("Thread " +  threadName + " exiting.");
+   }
 }
 ```
 
-### Example #2
-```java
-/*
-*  Create a Thread by Extending a Thread Class
-*/ 
-public class Tester {
-  public static void main(String args[]) {
-    ThreadDemo T1 = new ThreadDemo( "Thread-1");
-    T1.start();
-    
-    ThreadDemo T2 = new ThreadDemo( "Thread-2");
-    T2.start();
-  }   
-}
 
-class ThreadDemo extends Thread {
-  private Thread t;
-  private String threadName;
-  
-  ThreadDemo(String name) {
-    threadName = name;
-    System.out.println("Creating " +  threadName );
-  }
-  
-  public void run() {
-    System.out.println("Running " +  threadName );
-    try {
-        for(int i = 4; i > 0; i--) {
-          System.out.println("Thread: " + threadName + ", " + i);
-          // Let the thread sleep for a while.
-          Thread.sleep(50);
-        }
-    } catch (InterruptedException e) {
-        System.out.println("Thread " +  threadName + " interrupted.");
-    }
-    System.out.println("Thread " +  threadName + " exiting.");
-  }
-  
-  public void start () {
-    System.out.println("Starting " +  threadName );
-    if (t == null) {
-        t = new Thread (this, threadName);
-        t.start ();
-    }
-  }
-}
-
-```
