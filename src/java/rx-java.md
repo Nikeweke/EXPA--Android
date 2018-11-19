@@ -54,56 +54,85 @@ System.out.println(result);
 ```
 
 ### Example: create()
-
 ```java
 public class Index {
     
-    static String result = "";
+  // @description: https://github.com/ReactiveX/RxJava/wiki/Creating-Observables#from
+  public static void main(String[] args) {
+    // create arraylist   
+    List<String> list = new ArrayList<>(Arrays.asList("one", "two", "three"));   
+      
+    // create observable 
+    Observable<String> observable = Observable.fromIterable(list);
+      
+    // create observer   
+    Observer<String> observer = new Observer<String>() {
+      @Override 
+      public void onComplete () {
+        System.out.println("onComplete");
+      }
+      
+      @Override 
+      public void onError (Throwable e) {
+        System.out.println("error occured");
+      }
+      
+      @Override 
+      public void onNext (String s) {
+        System.out.println("onNext" + s);
+      }
+      
+      @Override
+      public void onSubscribe(Disposable d) {
+        System.out.println("onSubscribe" + d); 
+      }
+    };
 
-    public static void main(String[] args) {
-        
-//        let observable = rx.Observable.create((obs) => {
-//            obs.onNext('asdasd')
-//            obs.onCompleted()
-//          })
-//
-//          observable.subscribe(
-//            (x)   => console.log(x),
-//            (err) => console.log(err),
-//            ()    => console.log('completed')
-//          )
+    observable.subscribe(observer);
+  }
+}
+```
 
-        // Creating observable
-        Observable observable = Observable.create(obs -> {
-          obs.onNext("Hello its next");
-          obs.onComplete();
-        });
-        
-        
-        // 1# Listen for events
-//        observable.subscribe(new Observer<Integer>() {
-//          public void onNext (Integer t) {
-//              System.out.println(t);
-//          }
-//          
-//          public void onSubscribe(Disposable t) {
-//              
-//          }
-//          
-//          public void onError (Throwable e) {
-//          }
-//          
-//          public void onComplete () {
-//          }
-//        });
+### Example: Subject
+```java
+// @description: https://medium.com/@poudanen/%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-rxjava-subject-publish-replay-behavior-%D0%B8-async-subject-35ad50cd1064
+public static void main(String[] args) {
+    
+  // create subject    
+  PublishSubject<String> source = PublishSubject.create();
 
-          // 2# Listen for events
-          observable.subscribe(
-            System.out::println,
-            Throwable::printStackTrace,
-            System.out::println
-          );
-               
+  // create observer   
+  Observer<String> observer = new Observer<String>() {
+    @Override 
+    public void onComplete () {
+      System.out.println("onComplete");
     }
+
+    @Override 
+    public void onError (Throwable e) {
+      System.out.println("error occured");
+    }
+
+    @Override 
+    public void onNext (String s) {
+      System.out.println("onNext" + s);
+    }
+
+    @Override
+    public void onSubscribe(Disposable d) {
+      System.out.println("onSubscribe" + d); 
+    }
+  };
+
+  // Получит 1, 2, 3, 4 и onComplete
+  source.subscribe(observer); 
+
+  source.onNext("1");
+  source.onNext("2");
+  source.onNext("3");
+
+  // Получит 4 и onComplete для следующего наблюдателя тоже.source.subscribe(getSecondObserver());
+  source.onNext("4");
+  source.onComplete();
 }
 ```
