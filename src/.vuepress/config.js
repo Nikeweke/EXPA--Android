@@ -25,6 +25,7 @@ module.exports = {
           '/android/gradle.md',
           '/android/animations.md',
           '/android/services.md',
+          '/android/butterknife.md',
           '/android/otto.md',
           '/android/realm.md',
           '/android/retrofit.md',
