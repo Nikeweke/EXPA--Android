@@ -5,7 +5,11 @@
 * [Графика](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/377-urok-162-grafika-drawable-shape-gradient.html)
 * [Service example](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/157-urok-92-service-prostoj-primer.html)
 * [Обновление БД - "onUpgrade"](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/79-urok-39-onupgrade-obnovljaem-bd-v-sqlite.html)
+* [Библиотеки Android для подкачки](https://developer.android.com/topic/libraries/support-library/packages)
+* [Создание иконок для приложения и самого приложения](https://romannurik.github.io/AndroidAssetStudio/index.html)
+
 
 ### Java
 * [Java tutorial](https://www.tutorialspoint.com/java/)
 * [Vertex Academy](https://vertex-academy.com/tutorials/ru/)
+* [Mkyong Tutorials](https://www.mkyong.com/java/java-how-to-get-current-date-time-date-and-calender/)

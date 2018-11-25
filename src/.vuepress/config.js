@@ -30,6 +30,7 @@ module.exports = {
           '/android/retrofit.md',
           '/android/realm.md',
           '/android/how-to.md',
+          '/android/problems-solutions.md'
         ]
       },
       {
@@ -44,6 +45,7 @@ module.exports = {
           '/java/generics',
           '/java/multithread',
           '/java/concurrency',
+          '/java/date.md',
           '/java/rx-java.md',
         ]
       },

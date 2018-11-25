@@ -1,4 +1,4 @@
-# Основные типы данных 
+# Datatypes (basic, hashmap, arraylist)
 
 [[toc]]
 
