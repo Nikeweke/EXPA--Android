@@ -18,19 +18,12 @@ module.exports = {
         children: [
           '/android/intro.md',
           '/android/studio.md',
-          // '/android/basic_elements.md',
           '/android/data_savings.md',
-          '/android/activities.md',
-          '/android/fragments.md',
-          '/android/gradle.md',
+          '/android/activities-and-frags-services.md',
+          '/android/libraries.md',
           '/android/animations.md',
-          '/android/services.md',
-          '/android/butterknife.md',
-          '/android/otto.md',
-          '/android/retrofit.md',
-          '/android/realm.md',
-          '/android/how-to.md',
-          '/android/problems-solutions.md'
+          '/android/app-perfomance.md',
+          '/android/problems-solutions.md',
         ]
       },
       {

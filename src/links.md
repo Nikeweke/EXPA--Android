@@ -1,12 +1,19 @@
 # Ссылки
 
 ### Android
+* **Графика**
+  + [Градиент](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/377-urok-162-grafika-drawable-shape-gradient.html)
+  + [Создание иконок для приложения и самого приложения](https://romannurik.github.io/AndroidAssetStudio/index.html)
 
-* [Графика](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/377-urok-162-grafika-drawable-shape-gradient.html)
-* [Service example](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/157-urok-92-service-prostoj-primer.html)
-* [Обновление БД - "onUpgrade"](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/79-urok-39-onupgrade-obnovljaem-bd-v-sqlite.html)
-* [Библиотеки Android для подкачки](https://developer.android.com/topic/libraries/support-library/packages)
-* [Создание иконок для приложения и самого приложения](https://romannurik.github.io/AndroidAssetStudio/index.html)
+* **БД**
+  + [Обновление БД - "onUpgrade"](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/79-urok-39-onupgrade-obnovljaem-bd-v-sqlite.html)
+
+* **Библиотеки**
+  + [Android design и другие](https://developer.android.com/topic/libraries/support-library/packages)
+  + [Butterknife - упрощение сбора элементов](http://jakewharton.github.io/butterknife/)
+
+* **Элементы приложения**
+  + [Service example](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/157-urok-92-service-prostoj-primer.html)
 
 
 ### Java
