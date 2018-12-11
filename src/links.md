@@ -11,6 +11,9 @@
 * **Библиотеки**
   + [Android design и другие](https://developer.android.com/topic/libraries/support-library/packages)
   + [Butterknife - упрощение сбора элементов](http://jakewharton.github.io/butterknife/)
+  + [30 Android-библиотек](https://habr.com/post/431400/)
+  + [Top 5 libraries](https://infinum.co/the-capsized-eight/top-5-android-libraries-every-android-developer-should-know-about)
+  + [Top 10 libraries](https://infinum.co/the-capsized-eight/top-10-android-libraries-every-android-developer-should-know-about)
 
 * **Элементы приложения**
   + [Service example](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/157-urok-92-service-prostoj-primer.html)
