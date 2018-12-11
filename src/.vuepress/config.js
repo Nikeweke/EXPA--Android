@@ -32,7 +32,7 @@ module.exports = {
         children: [
           '/java/intro.md',
           '/java/env.md',
-          '/java/netbeans.md',
+          '/java/IDEs.md',
           '/java/datatypes.md',
           '/java/loop-array.md',
           '/java/generics',
