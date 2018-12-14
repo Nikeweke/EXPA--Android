@@ -18,6 +18,7 @@ module.exports = {
         children: [
           '/android/intro.md',
           '/android/studio.md',
+          '/android/kotlin.md',
           '/android/data_savings.md',
           '/android/activities-and-frags-services.md',
           '/android/libraries.md',
