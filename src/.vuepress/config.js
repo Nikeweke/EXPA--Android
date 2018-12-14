@@ -24,6 +24,7 @@ module.exports = {
           '/android/animations.md',
           '/android/app-perfomance.md',
           '/android/problems-solutions.md',
+          '/android/animations-ex1.md',
         ]
       },
       {
