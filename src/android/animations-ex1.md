@@ -1,8 +1,7 @@
 #  Анимация - пример 1
 
-```javapackage 
-
-com.app.atletiko.UI.fragments;
+```java
+package com.app.atletiko.UI.fragments;
 
 import android.animation.Animator;
 import android.animation.ArgbEvaluator;
