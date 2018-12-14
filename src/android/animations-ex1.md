@@ -1,23 +1,6 @@
 #  Анимация - пример 1
 
 ```java
-package com.app.atletiko.UI.fragments;
-
-import android.animation.Animator;
-import android.animation.ArgbEvaluator;
-import android.animation.ObjectAnimator;
-import android.content.res.Resources;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.AccelerateInterpolator;
-import android.widget.ImageView;
-import com.app.atletiko.R;
-import com.app.atletiko.UI.MainActivity;
-
-
 public class StartFragment extends Fragment {
 
   /**
