@@ -4,6 +4,7 @@
 * [Kotlin - Tutorials Point](https://www.tutorialspoint.com/kotlin/kotlin_basic_types.htm)
 * [Kotlin docs](https://kotlinlang.org/docs/reference/)
 * [Kotlin native cli](https://github.com/JetBrains/kotlin/releases/tag/v1.3.11) 
+* [Kotlin native tutorial video](https://www.youtube.com/watch?v=YAKjUVNG14E)
 
 ### Android
 * **Графика**
