@@ -18,7 +18,7 @@ Kotlin можно подключить в любой свой проект и т
 
 ### Подключение в проект
 ###### build.gradle
-```gradle
+```groovy
 buildscript {
 
     ext.kotlinVersion = '1.3.11'  // <!-- this one 
@@ -37,7 +37,7 @@ buildscript {
 ```
 
 ###### app/build.gradle
-```gradle
+```groovy
 apply plugin: 'com.android.application'
 
 // Kotling plugins
@@ -72,35 +72,119 @@ dependencies {
 
 ### Сравнение Java и Kotlin
 
-Перегрузка поля в дочернем классе
+Сеттеры и геттеры
+```java
+class Person {
+  public String firstName;
+  public Integer age;
+
+  // Setters
+  private void setFirstName (String firstName) {
+      return this.firstName = firstName;
+  }
+  private void setAge (int age) {
+      return this.age = age;
+  }
+
+  // Getters
+  private String getFirstName () {
+    return this.firstName;
+  }
+  private Integer getAge () {
+    return this.age;
+  }
+
+} 
+
+class Index {
+    public void main(String[] args) {
+       Person person = new Person();
+       person.setFirstName("Alex");
+       person.setAge(22);
+
+       System.out.println(person.getFirstName() + " - " + person.getAge() )
+    }
+}
+```
+```kt
+// Its means like setters and getters already inside  - EZ PZ right!
+class Person(val firstName: String, var age: Int) 
+
+fun main(args: Array<String>) {
+    var person       = Person()
+    person.firstName = "Alex"
+    person.age       = 22
+
+    println("${person.firstName} - ${person.age}")
+}
+```
+<br>
+
+
+Сбор элементов с разметки (Android)
+```java 
+// in Activity
+@Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    TextView headerTv = (TextView) findViewById(R.id.headerTv);
+    Button   agreeBtn = (Button) findViewById(R.id.agreeBtn);
+
+    headerTv.setText("Hello there");
+    agreeBtn.setOnClickListener(new OnClickListener() {
+        public void onClick(View v) {
+            // do some actions
+        } 
+    });
+}
+
+// in Fragment 
+@Override
+public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+   View rootView = inflater.inflate(R.layout.home_fragment, container, false);
+
+   TextView headerTv = (TextView) rootView.findViewById(R.id.headerTv);
+   Button   agreeBtn = (Button) rootView.findViewById(R.id.agreeBtn);
+
+   headerTv.setText("Hello there");
+   agreeBtn.setOnClickListener(new OnClickListener() {
+    public void onClick(View v) {
+        // do some actions
+    } 
+   });
+}
+```
+
+```kt
+// in Activity
+override fun onCreate(savedInstanceState: Bundle?): View? {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+
+    headerTv.text = "Hello there"
+    agreeBtn.setOnClickListener {
+      // do some action
+    }
+}
+
+// in Fragment 
+override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    val rootView = inflater.inflate(R.layout.settings_fragment, container, false)
+
+    rootView.headerTv.text = "Hello there"
+    rootView.agreeBtn.setOnClickListener {
+      // do some action
+    }
+
+    return rootView
+}
+```
+
+Перегрузка родительского поля из дочернего класса
 ```Java 
 ```
 ```Kotlin
 ```
 <br>
-
-
-Сеттеры и геттеры
-```java
-class Person {
-  public final String firstName;
-  public String age;
-
-  // Setters
-
-  // Getters
-
-} 
-```
-```kt
-class Person(val firstName: String, var age: Int) 
-```
-<br>
-
-
-Сбор элементов с разметки
-```java 
-```
-
-```kt
-```
