@@ -73,6 +73,7 @@ dependencies {
 ### Сравнение Java и Kotlin
 
 Сеттеры и геттеры
+###### Java
 ```java
 class Person {
   public String firstName;
@@ -106,7 +107,8 @@ class Index {
     }
 }
 ```
-```kt
+###### Kotlin
+```Kotlin
 // Its means like setters and getters already inside  - EZ PZ right!
 class Person(val firstName: String, var age: Int) 
 
@@ -122,6 +124,7 @@ fun main(args: Array<String>) {
 
 
 Сбор элементов с разметки (Android)
+###### Java
 ```java 
 // in Activity
 @Override
@@ -156,8 +159,8 @@ public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle s
    });
 }
 ```
-
-```kt
+###### Kotlin
+```Kotlin
 // in Activity
 override fun onCreate(savedInstanceState: Bundle?): View? {
     super.onCreate(savedInstanceState)
@@ -181,8 +184,10 @@ override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, saved
     return rootView
 }
 ```
+<br>
 
 Перегрузка родительского поля из дочернего класса
+###### Java
 ```Java 
 public class Base {
     public String TABLE = "Base";
@@ -214,7 +219,7 @@ public class Index {
   }
 }
 ```
-
+###### Kotlin
 ```Kotlin
 open class Base {
   // open - means that you can override this in childs-class
