@@ -184,7 +184,58 @@ override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, saved
 
 Перегрузка родительского поля из дочернего класса
 ```Java 
+public class Base {
+    public String TABLE = "Base";
+
+    public void think () {
+      System.out.println(this.TABLE);  
+    }
+}
+
+// Extending Base 
+public class SomeModel extends Base {
+  private String TABLE = "Some";
+
+  // Only like this you can override field in Base class and start method like we wanted 
+  // it wont work like in Kotlin !!!
+  @Override
+  public void think () {
+    Base base = new Base();
+    base.TABLE = this.TABLE;
+    base.dropTable();
+  }
+}
+
+public class Index {
+  public static void main(String[] args) {
+    SomeModel someModel = new SomeModel();
+    someModel.think(); // output: 'Some'
+    someModel.think(); // without overriding method will be: 'Base'
+  }
+}
 ```
+
 ```Kotlin
+open class Base {
+  // open - means that you can override this in childs-class
+  open val tableName = "Base"
+
+  open fun think () {
+    println(this.tableName)
+  }
+}
+
+// Extending Base class
+class SomeModel: Base() { 
+  override val tableName = "Some"
+}
+
+fun main(args: Array<String>) {
+    var  a = SomeModel()
+
+    // We simply override field in Base class and can use funcitonality of parent class with preferences of child class, 
+    // EZ PZ - lemon sqzy!
+    a.think()  // output: 'Some'
+}
 ```
 <br>
