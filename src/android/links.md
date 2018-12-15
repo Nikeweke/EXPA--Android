@@ -1,5 +1,10 @@
 # Ссылки
 
+### Kotlin
+* [Kotlin - Tutorials Point](https://www.tutorialspoint.com/kotlin/kotlin_basic_types.htm)
+* [Kotlin docs](https://kotlinlang.org/docs/reference/)
+* [Kotlin native cli](https://github.com/JetBrains/kotlin/releases/tag/v1.3.11) 
+
 ### Android
 * **Графика**
   + [Градиент](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/377-urok-162-grafika-drawable-shape-gradient.html)
@@ -18,8 +23,3 @@
 * **Элементы приложения**
   + [Service example](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/157-urok-92-service-prostoj-primer.html)
 
-
-### Java
-* [Java tutorial](https://www.tutorialspoint.com/java/)
-* [Vertex Academy](https://vertex-academy.com/tutorials/ru/)
-* [Mkyong Tutorials](https://www.mkyong.com/java/java-how-to-get-current-date-time-date-and-calender/)

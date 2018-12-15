@@ -11,7 +11,7 @@ module.exports = {
       { text: 'To repository', link: 'https://github.com/Nikeweke/EXPA--Android-Java'},
     ],
     sidebar: [
-      '/links.md',
+      '/intro.md',
       {
         title: 'Android',
         collapsable: true,
@@ -26,6 +26,7 @@ module.exports = {
           '/android/app-perfomance.md',
           '/android/problems-solutions.md',
           '/android/animations-ex1.md',
+          '/android/links.md',
         ]
       },
       {
@@ -42,6 +43,7 @@ module.exports = {
           '/java/concurrency',
           '/java/date.md',
           '/java/rx-java.md',
+          '/java/links.md',
         ]
       },
     ]
