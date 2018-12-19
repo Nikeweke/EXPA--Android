@@ -14,6 +14,7 @@ module.exports = {
       '/android/intro.md',
       '/android/studio.md',
       '/android/kotlin.md',
+      '/android/kotlin-idioms.md',
       '/android/data_savings.md',
       '/android/activities-and-frags-services.md',
       '/android/libraries.md',
