@@ -1,4 +1,4 @@
-# Kotlin - Особенности 
+# Идиомы (Особенности) 
 
 [Kotlin idioms](https://kotlinlang.ru/docs/reference/idioms.html)
 

@@ -14,7 +14,6 @@ module.exports = {
       '/android/intro.md',
       '/android/studio.md',
       '/android/kotlin.md',
-      '/android/kotlin-idioms.md',
       '/android/data_savings.md',
       '/android/activities-and-frags-services.md',
       '/android/libraries.md',
@@ -23,6 +22,14 @@ module.exports = {
       '/android/problems-solutions.md',
       '/android/animations-ex1.md',
       '/android/links.md',
+      {
+        title: 'Kotlin',
+        collapsable: true,
+        children: [
+          '/kotlin/idioms.md',
+          '/kotlin/date-helper.md',
+        ]
+      },
       {
         title: 'Java',
         collapsable: true,

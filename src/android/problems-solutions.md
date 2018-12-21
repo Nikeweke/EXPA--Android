@@ -226,3 +226,37 @@ backgroundAnimator.addListener(new Animator.AnimatorListener() {
 * ViewPager
 * Fragment
 * Adapter для ViewPager
+
+### Как сделать чтобы при перевороте экрана не перегружалась активность?
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.app.atletiko">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".UI.MainActivity" android:configChanges="orientation|screenSize"> <!-- ADD THIS: android:configChanges="orientation|screenSize" -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
+``` 
+
+
+### Как сделать часть текста жирной ?
+```Kotlin
+Html.fromHtml("I am regulat <b>but i am the Boss</b>")
+```
