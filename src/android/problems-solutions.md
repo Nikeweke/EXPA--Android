@@ -218,15 +218,6 @@ backgroundAnimator.addListener(new Animator.AnimatorListener() {
   });
 ```
 
-### При переходе с одного фрагмента на другой лагает анимация?
-
-
-### Как перелистывать экраны (свайпом, слайд)?
-Для это нужно:
-* ViewPager
-* Fragment
-* Adapter для ViewPager
-
 ### Как сделать чтобы при перевороте экрана не перегружалась активность?
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -255,8 +246,17 @@ backgroundAnimator.addListener(new Animator.AnimatorListener() {
 </manifest>
 ``` 
 
-
 ### Как сделать часть текста жирной ?
 ```Kotlin
 Html.fromHtml("I am regulat <b>but i am the Boss</b>")
 ```
+
+
+### При переходе с одного фрагмента на другой лагает анимация?
+
+
+### Как перелистывать экраны (свайпом, слайд)?
+Для это нужно:
+* ViewPager
+* Fragment
+* Adapter для ViewPager
