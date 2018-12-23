@@ -28,6 +28,7 @@ module.exports = {
         children: [
           '/kotlin/idioms.md',
           '/kotlin/date-helper.md',
+          '/kotlin/preferences-helper.md',
         ]
       },
       {
