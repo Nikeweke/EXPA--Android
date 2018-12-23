@@ -266,6 +266,15 @@ Handler().postDelayed({
 
 2. 
 
+### Посмотреть тип переменной ?
+```Kotlin
+// output: kotlin.String
+someVar::class.qualifiedName
+
+// output: String
+someVar::class.simpleName
+```
+
 
 ### Как перелистывать экраны (свайпом, слайд)?
 Для это нужно:
