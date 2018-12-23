@@ -20,12 +20,28 @@ runOnUiThread {
 }
 ```
 
-### Handler 
+### Handlers
+Запускает код в потоке UI thread
 ```Kotlin
+// postAtFrontOfQueue() - Ставит исполнение кода в начало главного потока 
+Handler().postAtFrontOfQueue {
+  // code here...
+}
+
+// postDelayed() - запускает что-то через X миллисекунд от текущего времени
 Handler().postDelayed({
-    /* Create an Intent that will start the Menu-Activity. */
-    val mainIntent = Intent(this, Menu::class.java)
-    startActivity(mainIntent)
-    finish()
-}, 3000)
+  // code here...
+}, 300L)
+
+
+// postAtTime() - запускает что-то в указанное время XX: YY: ZZ.mmm
+Handler().postAtTime({
+  this.initVisitsRecyclerView()
+}, 300L)
+
+
+// post() - запускает сразу в главном потоке код. Вы должны использовать Handler.post () всякий раз, когда хотите выполнить операцию в потоке пользовательского интерфейса (UI Thread).
+Handler().post {
+  this.initVisitsRecyclerView()
+}
 ```

@@ -164,6 +164,10 @@ fun read(b: Array<Byte>, off: Int = 0, len: Int = b.size()) {
 
 ### Деструктуризация  
 ```Kotlin
+// DONT FORGET "data" word, then it will work
+data class Person (name: String, age: Int)
+
+val person = Person("Alex", 21)
 val (name, age) = person 
 ```
 
