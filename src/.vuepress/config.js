@@ -29,6 +29,7 @@ module.exports = {
           '/kotlin/idioms.md',
           '/kotlin/date-helper.md',
           '/kotlin/preferences-helper.md',
+          '/kotlin/coroutines.md',
         ]
       },
       {
