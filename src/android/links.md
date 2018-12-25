@@ -1,6 +1,7 @@
 # Ссылки
 
 ### Kotlin
+* [Kotlin for beginners](https://www.callicoder.com/kotlin-overview-installation-setup/)
 * [Kotlin - Tutorials Point](https://www.tutorialspoint.com/kotlin/kotlin_basic_types.htm)
 * [Kotlin docs](https://kotlinlang.org/docs/reference/)
 * [Kotlin docs RU](https://kotlinlang.ru/docs/reference/classes.html)
