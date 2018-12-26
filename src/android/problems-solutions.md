@@ -254,7 +254,7 @@ Html.fromHtml("I am regulat <b>but i am the Boss</b>")
 
 ### При переходе с одного фрагмента на другой лагает анимация?
 
-1. Handler.postDelayed() - возможное решение. Мы ждем пока пройдет анимация, допустим это 300 мл. секунд и делаем тормознутый код
+`Handler.postDelayed()` - возможное решение. Мы ждем пока пройдет анимация, допустим это 300 мл. секунд и делаем тормознутый код
 ```Kotlin
 // Пишем задержку анимации в ресурсах, и потом оттуда берем 
 val animationDuration = getResources().getInteger(R.integer.animation_duration).toLong()
@@ -263,8 +263,6 @@ Handler().postDelayed({
   // code here...
 }, durationSlideDown.toLong())
 ```
-
-2. 
 
 ### Посмотреть тип переменной ?
 ```Kotlin
