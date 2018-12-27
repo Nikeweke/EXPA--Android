@@ -10,6 +10,9 @@
 * [16 tips of Kotlin](https://savvyapps.com/blog/kotlin-tips-android-development)
 
 ### Android
+* **Интересности** 
+ * [Coordinator Layout, AppBarLayout](https://habr.com/post/270121/)
+ 
 * **Графика**
   + [Градиент](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/377-urok-162-grafika-drawable-shape-gradient.html)
   + [Создание иконок для приложения и самого приложения](https://romannurik.github.io/AndroidAssetStudio/index.html)
