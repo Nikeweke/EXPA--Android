@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Expa - Android & Java',
   description: 'Experience from Android world',
-  base: '/EXPA--Android-Java/',
+  base: '/EXPA--Android/',
   dest: '../docs',
   port: '3000',
 
