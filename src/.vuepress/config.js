@@ -8,7 +8,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Home', link: '/'},
-      { text: 'To repository', link: 'https://github.com/Nikeweke/EXPA--Android-Java'},
+      { text: 'To repository', link: 'https://github.com/Nikeweke/EXPA--Android'},
     ],
     sidebar: [
       '/android/intro.md',
