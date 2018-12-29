@@ -8,7 +8,7 @@
 * [Kotlin native cli](https://github.com/JetBrains/kotlin/releases/tag/v1.3.11) 
 * [Kotlin native tutorial video](https://www.youtube.com/watch?v=YAKjUVNG14E)
 * [16 tips of Kotlin](https://savvyapps.com/blog/kotlin-tips-android-development)
-* [Create Android App with Kotlin(book)](http://www.allitebooks.in/pro-android-with-kotlin/)
+* [Android App in Kotlin](https://github.com/Nikeweke/EXPA--Android-Java/blob/master/src/books/Pro%20Android%20with%20Kotlin.pdf)
 
 ### Android
 * **Интересности** 
