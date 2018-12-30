@@ -117,6 +117,14 @@ transaction.commit()
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:ordering="together">
 
+    <!--
+      <set> - этот тег обозначеает что можно применить сразу несколько эффектов.
+
+      Здесь 2 эффекта - сдвиг по горизнотали(x) и алфьа(прозрачность)  
+
+      android:ordering="together" - эффекты могут применяться как сразу, так и последовательно - "sequntially"
+    -->
+
     <objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
         android:interpolator="@android:anim/accelerate_decelerate_interpolator"
         android:propertyName="alpha"
