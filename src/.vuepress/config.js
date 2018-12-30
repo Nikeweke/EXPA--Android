@@ -16,6 +16,7 @@ module.exports = {
       '/android/kotlin.md',
       '/android/data_savings.md',
       '/android/activities-and-frags-services.md',
+      '/android/fragment-transactions.md',
       '/android/libraries.md',
       '/android/animations.md',
       '/android/app-perfomance.md',

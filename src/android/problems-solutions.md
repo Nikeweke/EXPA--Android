@@ -254,18 +254,48 @@ Html.fromHtml("I am regulat <b>but i am the Boss</b>")
 
 ### При переходе с одного фрагмента на другой лагает анимация?
 
-* `runOnUiThread {} + Handler.postDelayed() внутри`
+1. Если у вас есть фрагменты который в `onCreateView` имеет много сложных операций, и вы делаете постоянно replace операцию , то оно каждый раз будет создавать новый экзмепляр этого фрагменат и тупить. Применить такой подход:
 ```Kotlin
-// For fragments
-MainActivity().runOnUiThread {
-  // some light code
 
-  // and when hard 
-  Handler.postDelayed({...}, someDuration)
+// В Activity добавляем свойства(поля) класса, для хранения экзмепляров
+// которые потом можно будет использовать для действий с FragmentTransaction - show, hide, attach, detach - только эти операции не разрушают Fragment
+companion object {
+  private lateinit var HomeFragmentInstance   : Fragment
+  private lateinit var AddTaskFragmentInstance: Fragment
+}
+
+override fun onCreate(savedInstanceState: Bundle?) {
+  super.onCreate(savedInstanceState)
+  setContentView(R.layout.activity_main)
+
+  val transaction = supportFragmentManager.beginTransaction()
+
+  // Делаем эземепляры, и добавляем в контейнер
+  MainActivity.HomeFragmentInstance    = HomeFragment()
+  MainActivity.AddTaskFragmentInstance = AddTaskFragment()
+ 
+  transaction.add(R.id.frameContainer, MainActivity.HomeFragmentInstance)
+  transaction.add(R.id.frameContainer, MainActivity.AddTaskFragmentInstance)
+
+  transaction.commit()
+}
+
+
+... 
+
+// И потом на фрагменте мы пишем.
+// Тут нет проверки, показа ли фрагмент сейчас и т.д. 
+fun backToHome () {
+  val transaction = supportFragmentManager.beginTransaction()
+  transaction.hide(MainActivity.AddTaskFragmentInstance)
+  transaction.show(HomeFragmentInstance)
+
+  transaction.commit()
 }
 ```
+<br>
 
-* `Handler.postDelayed()` - возможное решение. Мы ждем пока пройдет анимация, допустим это 300 мл. секунд и делаем тормознутый код
+2. `Handler.postDelayed()` - возможное решение. Мы ждем пока пройдет анимация, допустим это 300 мл. секунд и делаем тормознутый код
 ```Kotlin
 // Пишем задержку анимации в ресурсах, и потом оттуда берем 
 val animationDuration = getResources().getInteger(R.integer.animation_duration).toLong()
@@ -273,6 +303,20 @@ val animationDuration = getResources().getInteger(R.integer.animation_duration).
 Handler().postDelayed({
   // code here...
 }, durationSlideDown.toLong())
+```
+<br>
+
+3. `runOnUiThread {} + Handler.postDelayed() внутри`
+```Kotlin
+// For fragments
+MainActivity().runOnUiThread {
+  // some light code
+
+  // and when hard 
+  Handler.postDelayed({
+    // some HARD, really hard... like St.Anger
+  }, someDuration)
+}
 ```
 
 ### Посмотреть тип переменной ?
@@ -284,9 +328,3 @@ someVar::class.qualifiedName
 someVar::class.simpleName
 ```
 
-
-### Как перелистывать экраны (свайпом, слайд)?
-Для это нужно:
-* ViewPager
-* Fragment
-* Adapter для ViewPager
