@@ -254,7 +254,7 @@ Html.fromHtml("I am regulat <b>but i am the Boss</b>")
 
 ### При переходе с одного фрагмента на другой лагает анимация?
 
-1. Если у вас есть фрагменты который в `onCreateView` имеет много сложных операций, и вы делаете постоянно replace операцию , то оно каждый раз будет создавать новый экзмепляр этого фрагменат и тупить. Применить такой подход:
+1. У вас есть фрагменты которые имеет много сложных операций при создании и тупят при открытии? И вы делаете постоянно replace операцию? Каждый раз создаеться новый экзмепляр из-за этого и тупняки. Надо делать пре-создание фрагментов и сохранять их. 
 ```Kotlin
 
 // В Activity добавляем свойства(поля) класса, для хранения экзмепляров
@@ -284,11 +284,12 @@ override fun onCreate(savedInstanceState: Bundle?) {
 ... 
 
 // И потом на фрагменте мы пишем.
-// Тут нет проверки, показа ли фрагмент сейчас и т.д. 
+// Тут нет проверки, показан ли фрагмент сейчас и т.д. 
 fun backToHome () {
   val transaction = supportFragmentManager.beginTransaction()
+  
   transaction.hide(MainActivity.AddTaskFragmentInstance)
-  transaction.show(HomeFragmentInstance)
+  transaction.show(MainActivity.HomeFragmentInstance)
 
   transaction.commit()
 }
