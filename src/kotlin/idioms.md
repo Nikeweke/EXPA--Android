@@ -9,8 +9,9 @@
 ### var OR val ?
 * `var` - для изменяемых переменных. 
 * `val` - это final переменные, иницилизуруються один раз.
+<br>
 
-### А где же статика? вместо неё - `companion object {...}`. 
+### А где же статика? Это `companion object {...}`. 
 Зачем статика вообще? чтобы не создавая экзмепляра класса вызывать поля(свойства) или методы класса. А также присваивать в поля какие то данные. Допустим подключение к БД и т.д. В Kotlin нет `static`, но есть `companion object` - все работает также.       
 ```Kotlin
 class Main {
@@ -21,7 +22,7 @@ class Main {
     val lateinit DBConn: SQLDatabase
   }
 
-  fun main (args: Array<String>) {
+  fun main(args: Array<String>) {
     Main.DBConn = DB.openConnection()     
   }
 
@@ -31,23 +32,25 @@ class DB {
 
   // static 
   companion object {
-    fun openConnection (): SQLDatabase {
+    fun openConnection(): SQLDatabase {
       // returning some connection
     }
   }
   
 }
 ```
+<br>
 
 ### Параметры функции Any and Unit
 ```Kotlin
 // Any - любой тип
-// Unit - это как void, также он необязательный
-fun tester (some: Any) : Unit {
+// Unit - это как void, он необязательный
+fun tester(some: Any): Unit {
   println(some)
 }
-
 ```
+<br>
+
 
 ### Null-Safety - операторы `?`,  `!!`,  `?:`, `let`  
 ```Kotlin
@@ -74,6 +77,8 @@ data?.let {
 */
 val l = b!!.length
 ```
+<br>
+
 
 ### Lateinit
 Что бы не париться с Null-Safety операторами когда иницилизируете поля в классе, можно использовать `lateinit`
@@ -86,9 +91,24 @@ class Main {
   private lateinit val DBConn: SQLDatabase
 }
 ```
+<br>
 
 ###  Интервалы
-https://kotlinlang.ru/docs/reference/ranges.html
+[https://kotlinlang.ru/docs/reference/ranges.html](https://kotlinlang.ru/docs/reference/ranges.html)
+```Kotlin
+if (i in 1..10) { // equivalent of 1 <= i && i <= 10
+    println(i)
+}
+
+for (i in 1..4) print(i) // prints "1234"
+
+for (i in 4 downTo 1) print(i) // prints "4321"
+
+for (i in 1..4 step 2) print(i) // prints "13"
+
+for (i in 4 downTo 1 step 2) print(i) // prints "42"
+```
+<br>
 
 
 ### Однострочные функции
@@ -100,6 +120,7 @@ fun theAnswer(): Int {
     return 42
 }
 ```
+<br>
 
 
 ### Строчные шаблоны
@@ -112,6 +133,7 @@ fun main(args: Array<String>) {
   // with objects ${object.name}
 }
 ```
+<br>
 
 ### Class - init block & primary, secondary constructors
 Класс в Kotlin может иметь первичный конструктор `(primary constructor)` и один или более вторичных конструкторов `(secondary constructors)`. Первичный конструктор является частью заголовка класса, его объявление идёт сразу после имени класса (и необязательных параметров). 
@@ -124,6 +146,7 @@ class Customer(name: String) {
     }
 }
 ```
+
 Обратите внимание, что параметры первичного конструктора могут быть использованы в инициализирующем блоке. Они также могут быть использованы при инициализации свойств в теле класса:
 
 В классах также могут быть объявлены дополнительные конструкторы `(secondary constructors)`, перед которыми используется ключевое слово constructor:
@@ -144,6 +167,7 @@ class Person(val name: String) {
     }
 }
 ```
+<br>
 
 
 ### Функция-расширения 
@@ -154,13 +178,15 @@ fun String.spaceToCamelCase() { ... }
 
 "Convert this to camelcase".spaceToCamelCase()
 ```
+<br>
 
-### Аргументы по умолчанию в функция 
+### Аргументы по умолчанию в функции
 ```Kotlin
 fun read(b: Array<Byte>, off: Int = 0, len: Int = b.size()) {
 ...
 }
 ```
+<br>
 
 ### Деструктуризация  
 ```Kotlin
@@ -170,4 +196,5 @@ data class Person (name: String, age: Int)
 val person = Person("Alex", 21)
 val (name, age) = person 
 ```
+<br>
 

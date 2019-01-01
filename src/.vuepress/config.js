@@ -17,23 +17,25 @@ module.exports = {
       '/android/data_savings.md',
       '/android/activities-and-frags-services.md',
       '/android/fragment-transactions.md',
-      '/android/libraries.md',
       '/android/animations.md',
+      '/android/animations-example1.md',
       '/android/app-perfomance.md',
       '/android/problems-solutions.md',
-      '/android/example-animations.md',
       '/android/example-tabs.md',
       '/android/links.md',
+
       {
         title: 'Kotlin',
         collapsable: true,
         children: [
           '/kotlin/idioms.md',
+          '/kotlin/coroutines.md',
           '/kotlin/date-helper.md',
           '/kotlin/preferences-helper.md',
-          '/kotlin/coroutines.md',
+          '/kotlin/links.md',
         ]
       },
+      
       {
         title: 'Java',
         collapsable: true,

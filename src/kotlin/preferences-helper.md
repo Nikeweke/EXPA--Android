@@ -15,9 +15,9 @@ PreferencesHelper(...).applyPrefs()
 
 Class
 ```Kotlin
-package com.app.atletiko.Helpers
+package com.app.myapp.Helpers
 
-import com.app.atletiko.UI.MainActivity
+import com.app.myapp.UI.MainActivity
 import kotlin.reflect.KProperty
 import kotlin.reflect.full.declaredMemberProperties
 
@@ -65,20 +65,6 @@ class PreferencesHelper (
         }
       }
     }
-
-    editor.apply()
-  }
-
-
-  /*
-  |--------------------------------------------------------------------------
-  | Обновить один ключ в preferences
-  |--------------------------------------------------------------------------
-  */
-  fun applyOnePref (key: String) {
-    val editor = MainActivity.sPref.edit()
-
-    // TODO: взять по имени тип и применить правильный put...
 
     editor.apply()
   }

@@ -1,18 +1,7 @@
 # Ссылки
 
-### Kotlin
-* [Kotlin for beginners](https://www.callicoder.com/kotlin-overview-installation-setup/)
-* [Kotlin - Tutorials Point](https://www.tutorialspoint.com/kotlin/kotlin_basic_types.htm)
-* [Kotlin docs](https://kotlinlang.org/docs/reference/)
-* [Kotlin docs RU](https://kotlinlang.ru/docs/reference/classes.html)
-* [Kotlin native cli](https://github.com/JetBrains/kotlin/releases/tag/v1.3.11) 
-* [Kotlin native tutorial video](https://www.youtube.com/watch?v=YAKjUVNG14E)
-* [16 tips of Kotlin](https://savvyapps.com/blog/kotlin-tips-android-development)
-* [Android App in Kotlin](https://github.com/Nikeweke/EXPA--Android-Java/blob/master/src/books/Pro%20Android%20with%20Kotlin.pdf)
-
-### Android
 * **Интересности** 
- * [Coordinator Layout, AppBarLayout](https://habr.com/post/270121/)
+  + [Coordinator Layout, AppBarLayout](https://habr.com/post/270121/)
  
 * **Графика**
   + [Градиент](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/377-urok-162-grafika-drawable-shape-gradient.html)
