@@ -153,3 +153,5 @@ transaction.commit()
 </set>
 ```
 
+### Работа с `addToBackStack()`
+

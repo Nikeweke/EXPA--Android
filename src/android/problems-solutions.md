@@ -254,49 +254,7 @@ Html.fromHtml("I am regulat <b>but i am the Boss</b>")
 
 ### При переходе с одного фрагмента на другой лагает анимация?
 
-1. У вас есть фрагменты которые имеет много сложных операций при создании и тупят при открытии? И вы делаете постоянно replace операцию? Каждый раз создаеться новый экзмепляр из-за этого и тупняки. Надо делать пре-создание фрагментов и сохранять их. 
-```Kotlin
-
-// В Activity добавляем свойства(поля) класса, для хранения экзмепляров
-// которые потом можно будет использовать для действий с FragmentTransaction - show, hide, attach, detach - только эти операции не разрушают Fragment
-companion object {
-  private lateinit var HomeFragmentInstance   : Fragment
-  private lateinit var AddTaskFragmentInstance: Fragment
-}
-
-override fun onCreate(savedInstanceState: Bundle?) {
-  super.onCreate(savedInstanceState)
-  setContentView(R.layout.activity_main)
-
-  val transaction = supportFragmentManager.beginTransaction()
-
-  // Делаем эземепляры, и добавляем в контейнер
-  MainActivity.HomeFragmentInstance    = HomeFragment()
-  MainActivity.AddTaskFragmentInstance = AddTaskFragment()
- 
-  transaction.add(R.id.frameContainer, MainActivity.HomeFragmentInstance)
-  transaction.add(R.id.frameContainer, MainActivity.AddTaskFragmentInstance)
-
-  transaction.commit()
-}
-
-
-... 
-
-// И потом на фрагменте мы пишем.
-// Тут нет проверки, показан ли фрагмент сейчас и т.д. 
-fun backToHome () {
-  val transaction = supportFragmentManager.beginTransaction()
-  
-  transaction.hide(MainActivity.AddTaskFragmentInstance)
-  transaction.show(MainActivity.HomeFragmentInstance)
-
-  transaction.commit()
-}
-```
-<br>
-
-2. `Handler.postDelayed()` - возможное решение. Мы ждем пока пройдет анимация, допустим это 300 мл. секунд и делаем тормознутый код
+1. `Handler.postDelayed()` - возможное решение. Мы ждем пока пройдет анимация, допустим это 300 мл. секунд и делаем тормознутый код
 ```Kotlin
 // Пишем задержку анимации в ресурсах, и потом оттуда берем 
 val animationDuration = getResources().getInteger(R.integer.animation_duration).toLong()
@@ -307,7 +265,7 @@ Handler().postDelayed({
 ```
 <br>
 
-3. `runOnUiThread {} + Handler.postDelayed() внутри`
+2. `runOnUiThread {} + Handler.postDelayed() внутри`
 ```Kotlin
 // For fragments
 MainActivity().runOnUiThread {
