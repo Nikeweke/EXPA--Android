@@ -19,6 +19,7 @@ module.exports = {
       '/android/fragment-transactions.md',
       '/android/animations.md',
       '/android/animations-example1.md',
+      '/android/http-requests.md',
       '/android/app-perfomance.md',
       '/android/problems-solutions.md',
       '/android/example-tabs.md',

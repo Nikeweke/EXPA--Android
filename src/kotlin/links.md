@@ -10,6 +10,7 @@
   + [Coroutines - async threads library for Kotlin](https://kotlinlang.org/docs/reference/coroutines-overview.html)
   + [Anko - async background tasks](https://antonioleiva.com/anko-background-kotlin-android/)
   + [Realm - DB ORM like objects](https://realm.io/blog/realm-4-3-0-released-w-first-class-support-for-kotlin/)
+  + [Awesome Kotlin](https://github.com/mcxiaoke/awesome-kotlin)
 
 * **Интересности** 
   + [16 tips of Kotlin](https://savvyapps.com/blog/kotlin-tips-android-development) 
