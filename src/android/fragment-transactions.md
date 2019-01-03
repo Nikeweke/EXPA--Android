@@ -155,3 +155,61 @@ transaction.commit()
 
 ### Работа с `addToBackStack()`
 
+**BackStack** - нужен для сохранения транзакций с фрагментами, то есть, можно откатить всю предыдущую транзакцию. Тем самым написав меньше кода на возвращение. Это полезно использовать когда есть фрагменты которые мы не хотим удалять из контейнера, а просто прячем их. Но это не обеспечивает без тормозные переходы на фрагменты, так как они якобы прирендеренные.
+
+Переход с Фрагмента(добавленный) на Фрагмент(добавленный). И обратно
+```Kotlin 
+// Начинаем транзакцию
+val transaction = this.fragmentManager.beginTransaction()
+
+// устанавливаем анимацию в начале, это важно!
+// 2 анимации на переход туда, и 2 - на переход откат транзакции(popBackStack)
+val animEnter    = R.anim.enter_from_right
+val animExit     = R.anim.exit_to_left
+val animEnterPop = R.anim.enter_from_left
+val animExitPop  = R.anim.exit_to_right
+transaction.setCustomAnimations(animEnter, animExit, animEnterPop, animExitPop)
+
+// находим первый фрагмент и прячем
+val currentFragment = this.fragmentManager.findFragmentByTag(currentFragmentTag)
+transaction.hide(currentFragment)
+
+// находим новый фрагмент и показываем
+val newFragment = this.fragmentManager.findFragmentByTag(newFragmentTag)
+transaction.show(newFragment)
+
+// добавляем(запоминаем) транзакцию, чтобы спокойно откатиться с помощью "fm.popBackStack()"
+transaction.addToBackStack(null)
+
+transaction.commit()
+```
+<br>
+
+Переход с Фрагмента(добавленный) на Фрагмент(не добавленный). И обратно
+```Kotlin
+val transaction = this.fragmentManager.beginTransaction()
+
+// анимация - для обычного перехода и перехода когда делают "popBackStack"
+val animEnter    = R.anim.enter_from_right
+val animExit     = R.anim.exit_to_left
+val animEnterPop = R.anim.enter_from_left
+val animExitPop  = R.anim.exit_to_right
+transaction.setCustomAnimations(animEnter, animExit, animEnterPop, animExitPop)
+
+// находим первый фрагмент и прячем
+val currentFragment = this.fragmentManager.findFragmentByTag(currentFragmentTag)
+transaction.hide(currentFragment)
+
+// новый фрагмент и показываем
+transaction.add(R.id.frameContainer, newFragment)
+
+// добавляем(запоминаем) транзакцию, чтобы спокойно откатиться с помощью "fm.popBackStack()"
+transaction.addToBackStack(null)
+
+transaction.commit()
+```
+
+И если нам захочеться вернуться на домашний экран, просто делаем откат
+```Kotlin
+this.fragmentManager.popBackStack()
+```
