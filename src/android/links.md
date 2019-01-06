@@ -21,4 +21,4 @@
   + [Service example](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/157-urok-92-service-prostoj-primer.html)
 
 * **Google Play**
-  + [Instruction](https://github.com/Nikeweke/EXPA--Android-Java/blob/master/src/documents/Pro%20Android%20with%20Kotlin.pdf)
+  + [Packing and Distribution](https://github.com/Nikeweke/EXPA--Android-Java/blob/master/src/documents/android-mobile-packaging-and-distribution.docx)
