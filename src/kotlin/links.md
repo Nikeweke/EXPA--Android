@@ -21,4 +21,4 @@
   + [Kotlin native tutorial video](https://www.youtube.com/watch?v=YAKjUVNG14E)
 
 * **Books**
-  + [Android App in Kotlin](https://github.com/Nikeweke/EXPA--Android-Java/blob/master/src/books/Pro%20Android%20with%20Kotlin.pdf)
+  + [Android App in Kotlin](https://github.com/Nikeweke/EXPA--Android-Java/blob/master/src/documents/Pro%20Android%20with%20Kotlin.pdf)
