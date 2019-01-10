@@ -23,6 +23,7 @@ module.exports = {
       '/android/app-perfomance.md',
       '/android/problems-solutions.md',
       '/android/example-tabs.md',
+      '/android/android-ndk.md',
       '/android/links.md',
 
       {
