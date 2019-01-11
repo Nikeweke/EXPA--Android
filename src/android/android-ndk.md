@@ -15,7 +15,7 @@
 * Использовать прямое низкоуровневое программирование (т. е. аппаратное обеспечение)
 
 ### Installation
-Нужно зайти в `Android SDK Tools` и выбрать для установки там **NDK** и **CMake**(сборщик С-го кода), **LLDB**.
+Нужно зайти в `Android SDK Tools` и выбрать для установки там **NDK** и **CMake**(сборщик С/C++ кода).
 
 ### Добавление поддержки к новому проекту 
 Процесс создания нового проекта с поддержкой нативного кода аналогичен созданию стандартного проекта Android, за исключением нескольких дополнительных шагов:
@@ -38,4 +38,89 @@
 
 ### Добавление поддержки к существуещему проекту 
 
-I DONT KNOW HOW at this time. Можно создать новый проект и туда перетащить файлы.
+Можно создать новый проект с таким же именем, а потом смержить проекты. Вариант рискованный, но рабочий.
+
+### Пример вызова С-шных функций
+Весь код C/C++ храниться в папке **src/main/cpp**
+
+```Kotlin
+package com.myapp
+
+class MainActivity : AppCompatActivity() {
+    // Подключаем нашу библиотеку "native-lib.cpp"
+    // их можно создать еще
+    init {
+      System.loadLibrary("native-lib")
+    }
+
+    /**
+     *  Обозначаем внешние функции из C/C++ 
+     */
+    external fun getSomeString(): String
+    external fun addNumbers(a: Int, b: Int): Int
+
+    /**
+    *  onCreate()
+    */
+    override fun onCreate(savedInstanceState: Bundle?) {
+      super.onCreate(savedInstanceState)
+      setContentView(R.layout.activity_main)
+
+      val someString = getSomeString()  
+      val result     = addNumbers(4, 2)
+
+      Toast.makeText(
+          this, 
+          "$result - $someString", 
+          Toast.LENGTH_LONG
+       ).show()
+    }
+}
+```
+
+```C++
+// src/main/cpp/native-lib.cpp
+
+#include <jni.h>
+#include <string>
+
+/*
+   Метод начинаеться с слова Java - все остальное это путь к пакету где будет вызвана эта функция, пример названия ф-ции:
+
+   пакет в kotlin - com.myapp
+   название функции в с++ - Java_com_myapp_[название функции](){...}
+
+   Объязательные параметры функции:
+     + JNIEnv* env – указатель на интерфейс;
+     + jobject     – ссылка на объект в котором описан нативный метод (this)
+
+   Подробней здесь:
+   https://proandroiddev.com/android-ndk-interaction-of-kotlin-and-c-c-5e19e35bac74
+*/
+
+
+/* ========================================>
+ Описание функции:
+   + JNIEXPORT - обозначает видимость этой функции (нужно юзать если cppFlags "-fvisibility=hidden") [default/hidden]
+   + JNICALL - для корректной работы сборки
+   + Возвращает String (jstring)
+   + Будет вызвана в пакете: com.gymupadmin.UI.MainActivity
+   + Название функции: stringFromJNI
+======================================== */
+extern "C" {
+    JNIEXPORT jstring JNICALL
+    Java_com_myapp_MainActivity_getSomeString(JNIEnv* env, jobject) {
+        std::string hello = "Hello from C++";
+        return env->NewStringUTF(hello.c_str());
+    }
+
+    JNIEXPORT jint JNICALL
+    Java_com_myapp_MainActivity_addNumbers(JNIEnv* env, jobject, jint a, jint b) {
+        return a + b;
+    }
+}
+
+
+
+
+```

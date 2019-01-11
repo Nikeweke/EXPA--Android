@@ -20,7 +20,7 @@
 
 ### Simple Http request
 ```groovy
-implementation 'com.beust:klaxon:5.0.1'
+implementation 'com.google.code.gson:gson:2.8.5'
 ```
 
 ```Kotlin
@@ -28,18 +28,23 @@ implementation 'com.beust:klaxon:5.0.1'
 // потому что операция выполняеться не мгновенно, а блокирует основной поток
 thread {
   val result = URL("https://jsonplaceholder.typicode.com/todos/1").readText()
-  Log.i(MainActivity.logTag, result)
+  Log.i(TAG, result)
 
   // определяем класс по которому распарсим ответку
-  class Task (
-    val userId: Int, 
-    val id: Int, 
-    val title: String, 
-    val completed: Boolean
+  data class Task (
+    @SerializedName("userId")    var userId: Int, 
+    @SerializedName("id")        var id    : Int, 
+    @SerializedName("title")     var title : String,
+    @SerializedName("completed") var completed: Boolean
   )
 
-  val parsedResult = Klaxon().parse<Task>(result)!!
-  Log.i(MainActivity.logTag, "${parsedResult.userId}")
+  // from JSON to Object 
+  val parsedResult = Gson().fromJson(json, Task::class.java)
+  Log.i(TAG, "${parsedResult.userId}")
+
+  // from Object to JSON
+  val json = Gson().toJson(topic)
+  Log.i(TAG, "${json}")
 }
 ```
 

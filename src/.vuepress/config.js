@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Expa - Android & Java',
+  title: 'Expa - Android',
   description: 'Experience from Android world',
   base: '/EXPA--Android/',
   dest: '../docs',
@@ -20,7 +20,6 @@ module.exports = {
       '/android/animations.md',
       '/android/animations-example1.md',
       '/android/http-requests.md',
-      '/android/app-perfomance.md',
       '/android/problems-solutions.md',
       '/android/example-tabs.md',
       '/android/android-ndk.md',
