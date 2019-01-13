@@ -4,7 +4,7 @@
 
 --- 
 
-* [Klaxon - parse data to types](https://github.com/cbeust/klaxon)
+* [Gson](https://github.com/google/gson)
 * [Fuel - http library](https://github.com/kittinunf/Fuel)
 
 ### Add permission to make HTTP `AndroidManifest.xml`
