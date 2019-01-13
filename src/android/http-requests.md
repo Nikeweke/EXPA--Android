@@ -24,22 +24,24 @@ implementation 'com.google.code.gson:gson:2.8.5'
 ```
 
 ```Kotlin
+// определяем класс за классом в котором будем делать распарс
+data class Task (
+  @SerializedName("userId")    var userId: Int, 
+  @SerializedName("id")        var id    : Int, 
+  @SerializedName("title")     var title : String,
+  @SerializedName("completed") var completed: Boolean
+)
+```
+
+```Kotlin
 // без выполнения в потоке будет ошибка "android.os.NetworkOnMainThreadException",
 // потому что операция выполняеться не мгновенно, а блокирует основной поток
 thread {
   val result = URL("https://jsonplaceholder.typicode.com/todos/1").readText()
   Log.i(TAG, result)
 
-  // определяем класс по которому распарсим ответку
-  data class Task (
-    @SerializedName("userId")    var userId: Int, 
-    @SerializedName("id")        var id    : Int, 
-    @SerializedName("title")     var title : String,
-    @SerializedName("completed") var completed: Boolean
-  )
-
   // from JSON to Object 
-  val parsedResult = Gson().fromJson(json, Task::class.java)
+  val parsedResult = Gson().fromJson(result, Task::class.java)
   Log.i(TAG, "${parsedResult.userId}")
 
   // from Object to JSON

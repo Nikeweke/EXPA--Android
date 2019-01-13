@@ -43,6 +43,50 @@
 ### Пример вызова С-шных функций
 Весь код C/C++ храниться в папке **src/main/cpp**
 
+```C
+// src/main/cpp/native-lib.cpp
+
+#include <jni.h>
+#include <string>
+
+using namespace std;
+
+/*
+   Метод начинаеться с слова Java - все остальное это путь к пакету где будет вызвана эта функция, пример названия ф-ции:
+
+   пакет в kotlin - com.myapp
+   название функции в с++ - Java_com_myapp_[название функции](){...}
+
+   Объязательные параметры функции:
+     + JNIEnv* env – указатель на интерфейс;
+     + jobject     – ссылка на объект в котором описан нативный метод (this)
+
+   Подробней здесь:
+   https://proandroiddev.com/android-ndk-interaction-of-kotlin-and-c-c-5e19e35bac74
+*/
+
+extern "C" {
+  /* ========================================>
+    Описание функции:
+      + JNIEXPORT - обозначает видимость этой функции (нужно юзать если cppFlags "-fvisibility=hidden") [default/hidden]
+      + JNICALL - для корректной работы сборки
+      + Возвращает String (jstring)
+      + Будет вызвана в пакете: com.gymupadmin.UI.MainActivity
+      + Название функции: stringFromJNI
+    ======================================== */
+    JNIEXPORT jstring JNICALL
+    Java_com_myapp_MainActivity_getSomeString(JNIEnv* env, jobject) {
+        string hello = "Hello from C++";
+        return env->NewStringUTF(hello.c_str());
+    }
+
+    JNIEXPORT jint JNICALL
+    Java_com_myapp_MainActivity_addNumbers(JNIEnv* env, jobject, jint a, jint b) {
+        return a + b;
+    }
+}
+```
+
 ```Kotlin
 package com.myapp
 
@@ -78,49 +122,3 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-```C++
-// src/main/cpp/native-lib.cpp
-
-#include <jni.h>
-#include <string>
-
-/*
-   Метод начинаеться с слова Java - все остальное это путь к пакету где будет вызвана эта функция, пример названия ф-ции:
-
-   пакет в kotlin - com.myapp
-   название функции в с++ - Java_com_myapp_[название функции](){...}
-
-   Объязательные параметры функции:
-     + JNIEnv* env – указатель на интерфейс;
-     + jobject     – ссылка на объект в котором описан нативный метод (this)
-
-   Подробней здесь:
-   https://proandroiddev.com/android-ndk-interaction-of-kotlin-and-c-c-5e19e35bac74
-*/
-
-
-/* ========================================>
- Описание функции:
-   + JNIEXPORT - обозначает видимость этой функции (нужно юзать если cppFlags "-fvisibility=hidden") [default/hidden]
-   + JNICALL - для корректной работы сборки
-   + Возвращает String (jstring)
-   + Будет вызвана в пакете: com.gymupadmin.UI.MainActivity
-   + Название функции: stringFromJNI
-======================================== */
-extern "C" {
-    JNIEXPORT jstring JNICALL
-    Java_com_myapp_MainActivity_getSomeString(JNIEnv* env, jobject) {
-        std::string hello = "Hello from C++";
-        return env->NewStringUTF(hello.c_str());
-    }
-
-    JNIEXPORT jint JNICALL
-    Java_com_myapp_MainActivity_addNumbers(JNIEnv* env, jobject, jint a, jint b) {
-        return a + b;
-    }
-}
-
-
-
-
-```
