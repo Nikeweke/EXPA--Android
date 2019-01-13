@@ -24,7 +24,7 @@ implementation 'com.google.code.gson:gson:2.8.5'
 ```
 
 ```Kotlin
-// определяем класс за классом в котором будем делать распарс
+// определяем класс за классом в котором будем делать распарс. Important!!!
 data class Task (
   @SerializedName("userId")    var userId: Int, 
   @SerializedName("id")        var id    : Int, 
@@ -45,7 +45,8 @@ thread {
   Log.i(TAG, "${parsedResult.userId}")
 
   // from Object to JSON
-  val json = Gson().toJson(topic)
+  val task = Task(1, 1, "Take a nap", true)
+  val json = Gson().toJson(task)
   Log.i(TAG, "${json}")
 }
 ```
