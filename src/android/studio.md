@@ -1,7 +1,7 @@
 # Android studio
 Редактор для создания мобильных приложений.
 
-### Мой настройки
+### Мои настройки
 * Font UI - `Lucida Sans Unicode 12`
 * Font editor - `Consolas 14`
 

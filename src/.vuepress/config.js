@@ -15,15 +15,15 @@ module.exports = {
       '/android/studio.md',
       '/android/kotlin.md',
       '/android/data_savings.md',
-      '/android/activities-and-frags-services.md',
+      // '/android/activities-and-frags-services.md',
       '/android/fragment-transactions.md',
       '/android/animations.md',
       '/android/animations-example1.md',
-      '/android/http-requests.md',
-      '/android/problems-solutions.md',
       '/android/example-tabs.md',
       '/android/android-ndk.md',
       '/android/room-orm.md',
+      '/android/http-requests.md',
+      '/android/problems-solutions.md',
       '/android/links.md',
 
       {

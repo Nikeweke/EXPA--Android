@@ -35,7 +35,8 @@ data class Task (
 
 ```Kotlin
 // без выполнения в потоке будет ошибка "android.os.NetworkOnMainThreadException",
-// потому что операция выполняеться не мгновенно, а блокирует основной поток
+// потому что операция выполняеться не мгновенно, а блокирует основной поток. 
+// Для перехода между потоками thread и UIthread - можно юзать библиотеку "Anko"
 thread {
   val result = URL("https://jsonplaceholder.typicode.com/todos/1").readText()
   Log.i(TAG, result)

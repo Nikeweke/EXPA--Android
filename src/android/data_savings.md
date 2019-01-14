@@ -197,16 +197,4 @@ public class DBHelper extends SQLiteOpenHelper {
 При вызове `getReadableDatabase` возвращает базу для чтения , а если для записи база есть, то и её возвращает.
 :::
 
-#### Insert 
-#### Read
-#### Update
-#### Delete  
 
-### Room ORM
-https://developer.android.com/training/data-storage/room/
-
-#### Create db and lifecycle hooks
-#### Insert 
-#### Read
-#### Update
-#### Delete
