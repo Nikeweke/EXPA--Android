@@ -23,6 +23,7 @@ module.exports = {
       '/android/problems-solutions.md',
       '/android/example-tabs.md',
       '/android/android-ndk.md',
+      '/android/room-orm.md',
       '/android/links.md',
 
       {
