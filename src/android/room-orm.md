@@ -4,6 +4,7 @@
 
 ---
 
+* [7 pro-tips](https://medium.com/androiddevelopers/7-pro-tips-for-room-fbadea4bfbd1)
 * [Tutorial](https://startandroid.ru/ru/courses/architecture-components/27-course/architecture-components/529-urok-5-room-osnovy.html)
 
 ### Intro 
