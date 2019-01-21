@@ -59,6 +59,12 @@ xml/layout_scene.xml
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:motion="http://schemas.android.com/apk/res-auto">
 
+             
+    <!-- ВАЖНО:
+      Использовать не android:layout_constraint...,
+                    а motion:layout_constraint...
+    -->
+
     <!-- указываем начальное и конечное состояние, длительность, интерполятор -->
     <Transition
             motion:constraintSetStart="@+id/start"
@@ -89,8 +95,13 @@ xml/layout_scene.xml
                 motion:target="@id/button"/>
 
         </KeyFrameSet>
-
     </Transition>
+
+    <!--
+     Если убирать в Constraint неизменяемые свойтсва то они будут сбрасываться в ноль
+     Например: Я хочу изменить высоту Toolbar, но я думаю что в конечном состоянии можно же убрать ширину, так как я её не меняю верно?
+     но, если её не указать ширина сброситься в ноль, по-этому в начальном и конечном состоянии надо указывать все аттрибуты элементов
+    -->
 
     <!-- Начальное состояние -->
     <ConstraintSet android:id="@+id/start">
@@ -118,6 +129,10 @@ xml/layout_scene.xml
 
 </MotionScene>
 ```
+
+:::tip ВАЖНО
+Использовать не `android:layout_constraint...`, а `motion:layout_constraint...`
+:::
 
 layout/layout_motion.xml
 ```xml
