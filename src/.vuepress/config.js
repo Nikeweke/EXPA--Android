@@ -23,6 +23,7 @@ module.exports = {
       '/android/android-ndk.md',
       '/android/room-orm.md',
       '/android/http-requests.md',
+      '/android/motion-layout.md',
       '/android/problems-solutions.md',
       '/android/links.md',
 
