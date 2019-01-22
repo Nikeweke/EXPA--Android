@@ -122,3 +122,16 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
+### Keep function more secure
+```groovy
+// app/build.gradle
+android {
+    externalNativeBuild {
+        cmake {
+            // keep your code secure
+            // https://stackoverflow.com/questions/19422660/when-to-use-jniexport-and-jnicall-in-android-ndk
+            cppFlags "-fvisibility=hidden" // add this flag
+        }
+    }
+}
+```
