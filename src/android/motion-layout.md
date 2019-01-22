@@ -6,8 +6,10 @@
 
 * [Intorduction to MotionLayout](https://medium.com/google-developers/introduction-to-motionlayout-part-i-29208674b10d)
 * [Tutorial](https://www.slideshare.net/BrittBarakHIRING/make-your-app-dance-with-motionlayout)
-* [Tutorial 2](https://www.raywenderlich.com/8883-motionlayout-tutorial-for-android-getting-started)
+* [Tutorial - making slideshow](https://www.raywenderlich.com/8883-motionlayout-tutorial-for-android-getting-started)
 * [Motion Examples](https://github.com/mtcn/MotionLayoutExamples)
+* [Dev101](https://balusangem.github.io/motionlayoutintro/#0)
+* [Manage animation in code](https://www.androidauthority.com/motionlayout-animations-android-apps-896717/)
 
 ### Intro 
 **MotionLayout** - Позволяет анимириовать переход из одного состояния в другое.
