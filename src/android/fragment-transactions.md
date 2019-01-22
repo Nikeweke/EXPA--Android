@@ -4,6 +4,9 @@
 
 --- 
 
+[Fragment transitions](https://medium.com/androiddevelopers/fragment-transitions-ea2726c3f36f)
+[Fragment tricks](https://www.youtube.com/watch?time_continue=783&v=eUG3VWnXFtg)
+
 ### Intro
 **Fragment Transactions** - нужны для смены фрагментов в `FrameLayout(FrameContainer)`. В основном делаеться одна активность и в неё вставляеться `FrameContainer` в которой меняються фрагменты.
 
