@@ -24,6 +24,7 @@ module.exports = {
       '/android/room-orm.md',
       '/android/http-requests.md',
       '/android/motion-layout.md',
+      '/android/appbarlayout.md',
       '/android/problems-solutions.md',
       '/android/links.md',
 
