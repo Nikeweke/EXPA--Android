@@ -1,13 +1,17 @@
 # Ссылки
 
 * **Интересности** 
-  + [tools:title=”LayoutPreview”](https://proandroiddev.com/android-studio-layout-preview-b7b229741ec1)
   + [Hiding API keys in global gradle properties](https://medium.com/code-better/hiding-api-keys-from-your-android-repository-b23f5598b906)
-  + [Increasing build project via gradlew](https://android.jlelse.eu/how-i-reduced-my-android-build-times-by-89-4242e51ce946)
   + [Shimmer loading effect](https://medium.com/mindorks/android-design-shimmer-effect-fa7f74c68a93)
   + [Coordinator Layout, AppBarLayout](https://habr.com/post/270121/)
 
-* 
+* **Android studio**
+  + [Increasing build project via gradlew](https://android.jlelse.eu/how-i-reduced-my-android-build-times-by-89-4242e51ce946)
+  + [tools:title=”LayoutPreview”](https://proandroiddev.com/android-studio-layout-preview-b7b229741ec1)
+
+* **Observer and Events**
+  + [Kotlin Design Patterns — The Observer](https://medium.com/@ahmedrizwan/kotlin-design-patterns-the-observer-fc8e5a702b4c)
+  + [KDispatcher](https://habr.com/ru/post/418707/)
  
 * **Графика**
   + [Градиент](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/377-urok-162-grafika-drawable-shape-gradient.html)
@@ -28,4 +32,4 @@
   + [Service example](https://startandroid.ru/ru/uroki/vse-uroki-spiskom/157-urok-92-service-prostoj-primer.html)
 
 * **Google Play**
-  + [Packing and Distribution](https://github.com/Nikeweke/EXPA--Android-Java/blob/master/src/documents/android-mobile-packaging-and-distribution.d
+  + [Packing and Distribution](https://github.com/Nikeweke/EXPA--Android-Java/blob/master/src/documents/android-mobile-packaging-and-distribution.docx)
