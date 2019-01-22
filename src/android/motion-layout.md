@@ -167,3 +167,94 @@ class MainActivity : AppCompatActivity() {
   }
 }
 ```
+
+### CustomAttribute
+Анимирует изменения аттрибутов элемента
+
+```xml
+<ConstraintSet android:id="@+id/end">
+    <Constraint
+        android:id="@+id/button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="8dp"
+        motion:layout_constraintBottom_toBottomOf="parent"
+        motion:layout_constraintEnd_toEndOf="parent"
+        motion:layout_constraintTop_toTopOf="parent">
+
+            <!-- Цвет измениться на черный -->
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="#000" />
+
+            <!-- Исчезнет (может изчезнуть, но потом появиться снова, 
+                 лучше тогда заюзать <KeyAttribute>) -->
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="0.0" />
+
+    </Constraint>
+
+</ConstraintSet>
+
+<!--
+<Transition>
+    <KeyFrameSet>
+        <KeyAttribute
+            motion:target="@+id/button"
+            android:alpha="0"
+            motion:framePosition="90" />
+    </KeyFrameSet>
+</Transition>
+-->
+```
+
+### Особенности
+* MotionLayout не увидит элементы которые лежат в другом layout. То есть, если вы хотите поменять цвет кнопки в `ConstraintLayout`, через сцену которая прикреплена к `MotionLayout`, то сцена просто не увидит элемент и не применит ничего:
+```xml
+<MotionLayout
+   android:id="@+id/parentLayout"
+   app:layoutDescription="@xml/my_scene">
+
+    <ConstraintLayout android:id="@+id/childLayout">
+
+            <Button></Button>
+    
+    </ConstraintLayout>
+
+</MotionLayout>
+```
+<br>
+
+Чтобы это сделать вам надо объявить `ConstaintLayout` как `MotionLayout`. И потом слушать запуск анимации родительской анимации, или наоборот.
+
+```xml
+<MotionLayout
+   android:id="@+id/parentLayout"
+   app:layoutDescription="@xml/my_scene">
+
+    <MotionLayout android:id="@+id/childLayout">
+
+            <Button></Button>
+    
+    </MotionLayout>
+
+</MotionLayout>
+```
+<br>
+
+В коде поставить прослушку
+```Kotlin
+// здесь ставим прослушку на родителя и перегружаем методы
+view.parentLayout.setTransitionListener(object : MotionLayout.TransitionListener {
+    override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, progress: Float) {
+        // передаем выполнение анимации от родителя, 
+        // тем самым делаем зависимость
+        view.childLayout.setProgress(progress)
+    }
+    
+    override fun onTransitionCompleted(p0: MotionLayout, p1: Int) {}
+    override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {}
+    override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {}
+})
+```
