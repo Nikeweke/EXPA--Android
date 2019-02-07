@@ -1,5 +1,8 @@
 # Ссылки
 
+* **Perfomance**
+  + [Build your Android app Faster and Smaller than ever](https://medium.com/linedevth/build-your-android-app-faster-and-smaller-than-ever-25f53fdd3cdc)
+
 * **Интересности** 
   + [Hiding API keys in global gradle properties](https://medium.com/code-better/hiding-api-keys-from-your-android-repository-b23f5598b906)
   + [Shimmer loading effect](https://medium.com/mindorks/android-design-shimmer-effect-fa7f74c68a93)
