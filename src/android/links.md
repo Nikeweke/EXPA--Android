@@ -1,5 +1,8 @@
 # Ссылки
 
+* **Design examples**
+  + [Collect UI](http://collectui.com/challenges/to-do-list)
+
 * **Perfomance**
   + [Build your Android app Faster and Smaller than ever](https://medium.com/linedevth/build-your-android-app-faster-and-smaller-than-ever-25f53fdd3cdc)
 
