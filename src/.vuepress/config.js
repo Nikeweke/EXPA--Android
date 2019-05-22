@@ -11,27 +11,35 @@ module.exports = {
       { text: 'To repository', link: 'https://github.com/Nikeweke/EXPA--Android'},
     ],
     sidebar: [
-      '/android/intro.md',
-      '/android/studio.md',
-      '/android/kotlin.md',
-      '/android/data_savings.md',
-      // '/android/activities-and-frags-services.md',
-      '/android/fragment-transactions.md',
-      '/android/animations.md',
-      '/android/animations-example1.md',
-      '/android/example-tabs.md',
-      '/android/android-ndk.md',
-      '/android/room-orm.md',
-      '/android/http-requests.md',
-      '/android/motion-layout.md',
-      '/android/appbarlayout.md',
-      '/android/problems-solutions.md',
-      '/android/links.md',
+      '/intro.md',
+      '/links.md',
+      '/problems-solutions.md',
+      {
+        title: 'Animation',
+        collapsable: true,
+        children: [
+          '/animation-ui/animations.md',
+          '/animation-ui/appbar-layout.md',
+          '/animation-ui/motion-layout.md',
+          '/animation-ui/fragment-transactions.md',
+          '/animation-ui/example-tabs.md',
+          '/animation-ui/example-animations.md',
+        ]
+      },
+
+      {
+        title: 'Style',
+        collapsable: true,
+        children: [
+          '/style-ui/intro.md',
+        ]
+      },
 
       {
         title: 'Kotlin',
         collapsable: true,
         children: [
+          '/kotlin/intro.md',
           '/kotlin/idioms.md',
           '/kotlin/coroutines.md',
           '/kotlin/date-helper.md',

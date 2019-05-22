@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Android NDK (C/C++) | Expa - Android</title>
+    <meta name="description" content="Experience from Android world">
+    
+    
+    <link rel="preload" href="/EXPA--Android/assets/css/0.styles.9296587b.css" as="style"><link rel="preload" href="/EXPA--Android/assets/js/app.654b4ade.js" as="script"><link rel="preload" href="/EXPA--Android/assets/js/33.b34fc189.js" as="script"><link rel="prefetch" href="/EXPA--Android/assets/js/10.805ae123.js"><link rel="prefetch" href="/EXPA--Android/assets/js/11.228a8d13.js"><link rel="prefetch" href="/EXPA--Android/assets/js/12.39f5db21.js"><link rel="prefetch" href="/EXPA--Android/assets/js/13.facd2bfc.js"><link rel="prefetch" href="/EXPA--Android/assets/js/14.5a445a01.js"><link rel="prefetch" href="/EXPA--Android/assets/js/15.0b83d499.js"><link rel="prefetch" href="/EXPA--Android/assets/js/16.c61c3faf.js"><link rel="prefetch" href="/EXPA--Android/assets/js/17.f75e4273.js"><link rel="prefetch" href="/EXPA--Android/assets/js/18.80aff7ce.js"><link rel="prefetch" href="/EXPA--Android/assets/js/19.702ece27.js"><link rel="prefetch" href="/EXPA--Android/assets/js/2.d76a17f9.js"><link rel="prefetch" href="/EXPA--Android/assets/js/20.ccd15f01.js"><link rel="prefetch" href="/EXPA--Android/assets/js/21.d507a461.js"><link rel="prefetch" href="/EXPA--Android/assets/js/22.3688198f.js"><link rel="prefetch" href="/EXPA--Android/assets/js/23.18f77ec8.js"><link rel="prefetch" href="/EXPA--Android/assets/js/24.bff94b86.js"><link rel="prefetch" href="/EXPA--Android/assets/js/25.68943ffa.js"><link rel="prefetch" href="/EXPA--Android/assets/js/26.bd8bf49d.js"><link rel="prefetch" href="/EXPA--Android/assets/js/27.60582e7c.js"><link rel="prefetch" href="/EXPA--Android/assets/js/28.7fe8cd0c.js"><link rel="prefetch" href="/EXPA--Android/assets/js/29.c49e3c69.js"><link rel="prefetch" href="/EXPA--Android/assets/js/3.a2d88680.js"><link rel="prefetch" href="/EXPA--Android/assets/js/30.289a913b.js"><link rel="prefetch" href="/EXPA--Android/assets/js/31.8eda6179.js"><link rel="prefetch" href="/EXPA--Android/assets/js/32.93d98de2.js"><link rel="prefetch" href="/EXPA--Android/assets/js/34.95f46c2e.js"><link rel="prefetch" href="/EXPA--Android/assets/js/35.fd4aec52.js"><link rel="prefetch" href="/EXPA--Android/assets/js/36.45a8d9f4.js"><link rel="prefetch" href="/EXPA--Android/assets/js/37.f73b761f.js"><link rel="prefetch" href="/EXPA--Android/assets/js/4.a38140aa.js"><link rel="prefetch" href="/EXPA--Android/assets/js/5.e791c42f.js"><link rel="prefetch" href="/EXPA--Android/assets/js/6.c534c0cf.js"><link rel="prefetch" href="/EXPA--Android/assets/js/7.de644eb0.js"><link rel="prefetch" href="/EXPA--Android/assets/js/8.9404ce68.js"><link rel="prefetch" href="/EXPA--Android/assets/js/9.11b2d97f.js">
+    <link rel="stylesheet" href="/EXPA--Android/assets/css/0.styles.9296587b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/EXPA--Android/" class="home-link router-link-active"><!----> <span class="site-name">Expa - Android</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/EXPA--Android/" class="nav-link">Home</a></div><div class="nav-item"><a href="https://github.com/Nikeweke/EXPA--Android" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  To repository
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/EXPA--Android/" class="nav-link">Home</a></div><div class="nav-item"><a href="https://github.com/Nikeweke/EXPA--Android" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  To repository
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/EXPA--Android/intro.html" class="sidebar-link">Начало</a></li><li><a href="/EXPA--Android/links.html" class="sidebar-link">Ссылки</a></li><li><a href="/EXPA--Android/problems-solutions.html" class="sidebar-link">Проблемы и решения</a></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Animation</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Style</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Kotlin</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Java</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="android-ndk-c-c"><a href="#android-ndk-c-c" aria-hidden="true" class="header-anchor">#</a> Android NDK (C/C++)</h1> <p></p><div class="table-of-contents"><ul><li><a href="#intro">Intro</a></li><li><a href="#зачем-писать-на-c-есnи-есть-kotlin">Зачем писать на C++, если есть Kotlin?</a></li><li><a href="#installation">Installation</a></li><li><a href="#добавnение-c-поддержки-к-новому-проекту">Добавление C++ поддержки к новому проекту</a></li><li><a href="#добавnение-c-поддержки-к-существуещему-проекту">Добавление C++ поддержки к существуещему проекту</a></li><li><a href="#пример-вызова-с-шных-функций">Пример вызова С-шных функций</a></li><li><a href="#keep-function-more-secure">Keep function more secure</a></li></ul></div><p></p> <hr> <h3 id="intro"><a href="#intro" aria-hidden="true" class="header-anchor">#</a> Intro</h3> <p><strong>Android NDK</strong> - это <code>native dev kit</code> с помощью которого можно писать код на C/C++ который будет потом использоваться в приложении, можно вызывать код из Kotlin в C++, и наоборот.</p> <h3 id="зачем-писать-на-c-есnи-есть-kotlin"><a href="#зачем-писать-на-c-есnи-есть-kotlin" aria-hidden="true" class="header-anchor">#</a> Зачем писать на C++, если есть Kotlin?</h3> <ul><li><strong>Защита информации при декомпиляции приложения</strong>. Если вы пишете на С++, то информацию не могут достать так просто, если бы это был код на Java/Kotlin.</li> <li>Повысить производительность (сортировка больших данных, сложные алгоритмы, ресурсоемкие задачи)</li> <li>Использовать возможности существующих библиотек, написанных на C / C ++ или вашего собственного нативного кода, который вы хотите использовать повторно</li> <li>Создавать кросс-платформенные решения (Android и iOS)</li> <li>Использовать прямое низкоуровневое программирование (т. е. аппаратное обеспечение)</li></ul> <h3 id="installation"><a href="#installation" aria-hidden="true" class="header-anchor">#</a> Installation</h3> <p>Нужно зайти в <code>Android SDK Tools</code> и выбрать для установки там <strong>NDK</strong> и <strong>CMake</strong>(сборщик С/C++ кода).</p> <h3 id="добавnение-c-поддержки-к-новому-проекту"><a href="#добавnение-c-поддержки-к-новому-проекту" aria-hidden="true" class="header-anchor">#</a> Добавление C++ поддержки к новому проекту</h3> <p>Процесс создания нового проекта с поддержкой нативного кода аналогичен созданию стандартного проекта Android, за исключением нескольких дополнительных шагов:</p> <ol><li><p>В разделе Настройка нового проекта мастера установите флажок <strong>Include C++ Support</strong> checkbox. Нажмите кнопку &quot;Далее.</p></li> <li><p>Заполните все остальные поля и следующие несколько разделов мастера как обычно.</p></li> <li><p>При появлении запроса выберите <strong>Empty Activity</strong></p></li> <li><p>В разделе «Customize C++ Support» вы можете настроить свой проект с помощью следующих параметров:</p></li></ol> <ul><li><p><strong>Standart C++</strong>: используйте раскрывающийся список, чтобы выбрать, какую стандартизацию C ++ вы хотите использовать. При выборе Toolchain Default используется настройка CMake по умолчанию. Два других варианта - это C ++ 11 и C ++ 14.</p></li> <li><p><strong>Exceptions Support</strong>. Если эта опция включена, Android Studio добавляет флаг -fexceptions в cppFlags в файле build.gradle уровня модуля, который Gradle передает CMake. Значением по умолчанию является -fno-exception. Это может использоваться для обеспечения совместимости с версиями NDK, более ранними, чем NDKr5, которые не имели поддержки обработки исключений. Чтобы узнать об этом более подробно, перейдите по ссылке: https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_exceptions.html.</p></li> <li><p><strong>Runtime Type Information Support</strong>: с помощью этой опции вы сможете использовать функции отражения кода в коде C ++ во время выполнения. Установите этот флажок, если вы хотите поддержку RTTI. Если эта функция включена, Android Studio добавляет флаг -frtti в cppFlags в файле build.gradle уровня модуля, который Gradle передает в CMake.</p></li></ul> <ol start="5"><li>Нажмите Готово.</li></ol> <h3 id="добавnение-c-поддержки-к-существуещему-проекту"><a href="#добавnение-c-поддержки-к-существуещему-проекту" aria-hidden="true" class="header-anchor">#</a> Добавление C++ поддержки к существуещему проекту</h3> <p>Можно создать новый проект с таким же именем, а потом смержить проекты. Вариант рискованный, но рабочий.</p> <h3 id="пример-вызова-с-шных-функций"><a href="#пример-вызова-с-шных-функций" aria-hidden="true" class="header-anchor">#</a> Пример вызова С-шных функций</h3> <p>Весь код C/C++ храниться в папке <strong>src/main/cpp</strong></p> <div class="language-C extra-class"><pre class="language-c"><code><span class="token comment">// src/main/cpp/native-lib.cpp</span>
+
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;jni.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string&gt;</span></span>
+
+using namespace std<span class="token punctuation">;</span>
+
+<span class="token comment">/*
+   Метод начинаеться с слова Java - все остальное это путь к пакету где будет вызвана эта функция, пример названия ф-ции:
+
+   пакет в kotlin - com.myapp
+   название функции в с++ - Java_com_myapp_[название класса]_[название функции](){...}
+
+   Объязательные параметры функции:
+     + JNIEnv* env – указатель на интерфейс;
+     + jobject     – ссылка на объект в котором описан нативный метод (this)
+
+   Подробней здесь:
+   https://proandroiddev.com/android-ndk-interaction-of-kotlin-and-c-c-5e19e35bac74
+*/</span>
+
+<span class="token keyword">extern</span> <span class="token string">&quot;C&quot;</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* ========================================&gt;
+    Описание функции:
+      + JNIEXPORT - обозначает видимость этой функции (нужно юзать если cppFlags &quot;-fvisibility=hidden&quot;) [default/hidden]
+      + JNICALL - для корректной работы сборки
+      + Возвращает String (jstring)
+      + Будет вызвана в пакете: com.gymupadmin.UI.MainActivity
+      + Название функции: stringFromJNI
+    ======================================== */</span>
+    JNIEXPORT jstring JNICALL
+    <span class="token function">Java_com_myapp_MainActivity_getSomeString</span><span class="token punctuation">(</span>JNIEnv<span class="token operator">*</span> env<span class="token punctuation">,</span> jobject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        string hello <span class="token operator">=</span> <span class="token string">&quot;Hello from C++&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> env<span class="token operator">-&gt;</span><span class="token function">NewStringUTF</span><span class="token punctuation">(</span>hello<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    JNIEXPORT jint JNICALL
+    <span class="token function">Java_com_myapp_MainActivity_addNumbers</span><span class="token punctuation">(</span>JNIEnv<span class="token operator">*</span> env<span class="token punctuation">,</span> jobject<span class="token punctuation">,</span> jint a<span class="token punctuation">,</span> jint b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-Kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">package</span> com<span class="token punctuation">.</span>myapp
+
+<span class="token keyword">class</span> MainActivity <span class="token operator">:</span> <span class="token function">AppCompatActivity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Подключаем нашу библиотеку &quot;native-lib.cpp&quot;</span>
+    <span class="token comment">// их можно создать еще</span>
+    <span class="token keyword">init</span> <span class="token punctuation">{</span>
+      System<span class="token punctuation">.</span><span class="token function">loadLibrary</span><span class="token punctuation">(</span><span class="token string">&quot;native-lib&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     *  Обозначаем внешние функции из C/C++ 
+     */</span>
+    <span class="token keyword">external</span> <span class="token keyword">fun</span> <span class="token function">getSomeString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> String
+    <span class="token keyword">external</span> <span class="token keyword">fun</span> <span class="token function">addNumbers</span><span class="token punctuation">(</span>a<span class="token operator">:</span> Int<span class="token punctuation">,</span> b<span class="token operator">:</span> Int<span class="token punctuation">)</span><span class="token operator">:</span> Int
+
+    <span class="token comment">/**
+    *  onCreate()
+    */</span>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">onCreate</span><span class="token punctuation">(</span>savedInstanceState<span class="token operator">:</span> Bundle<span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onCreate</span><span class="token punctuation">(</span>savedInstanceState<span class="token punctuation">)</span>
+      <span class="token function">setContentView</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>layout<span class="token punctuation">.</span>activity_main<span class="token punctuation">)</span>
+
+      <span class="token keyword">val</span> someString <span class="token operator">=</span> <span class="token function">getSomeString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  
+      <span class="token keyword">val</span> result     <span class="token operator">=</span> <span class="token function">addNumbers</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+      Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>
+          <span class="token keyword">this</span><span class="token punctuation">,</span> 
+          <span class="token string">&quot;<span class="token interpolation variable">$result</span> - <span class="token interpolation variable">$someString</span>&quot;</span><span class="token punctuation">,</span> 
+          Toast<span class="token punctuation">.</span>LENGTH_LONG
+       <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="keep-function-more-secure"><a href="#keep-function-more-secure" aria-hidden="true" class="header-anchor">#</a> Keep function more secure</h3> <div class="language-groovy extra-class"><pre class="language-groovy"><code><span class="token comment">// app/build.gradle</span>
+android <span class="token punctuation">{</span>
+    externalNativeBuild <span class="token punctuation">{</span>
+        cmake <span class="token punctuation">{</span>
+            <span class="token comment">// keep your code secure</span>
+            <span class="token comment">// https://stackoverflow.com/questions/19422660/when-to-use-jniexport-and-jnicall-in-android-ndk</span>
+            cppFlags <span class="token string gstring">&quot;-fvisibility=hidden&quot;</span> <span class="token comment">// add this flag</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/EXPA--Android/assets/js/app.654b4ade.js" defer></script><script src="/EXPA--Android/assets/js/33.b34fc189.js" defer></script>
+  </body>
+</html>
