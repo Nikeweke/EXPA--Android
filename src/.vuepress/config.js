@@ -36,6 +36,18 @@ module.exports = {
       },
 
       {
+        title: 'Work with data',
+        collapsable: true,
+        children: [
+          '/work-with-data/activities-and-frags-services.md',
+          '/work-with-data/http-requests.md',
+          '/work-with-data/android-ndk.md',
+          '/work-with-data/data-storages.md',
+          '/work-with-data/room-orm.md',
+        ]
+      },
+
+      {
         title: 'Kotlin',
         collapsable: true,
         children: [
