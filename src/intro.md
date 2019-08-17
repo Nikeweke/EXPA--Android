@@ -15,7 +15,7 @@
 
 ### Мои настройки Android Studion
 * Font UI - `Lucida Sans Unicode 12`
-* Font editor - `Consolas 14`
+* Font editor - `Consolas 14`, `Fira Code Medium 14`
 
 ### Ускорение Android Studio
 1. Search for `Compile independent modules in parallel`, and check it.
